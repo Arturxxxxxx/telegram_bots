@@ -23,7 +23,7 @@ class StateShop(StatesGroup):
     custom_end_date = State()
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token='7839698649:AAFCws771SSfuDCkZRlXCcEy_NJ2ecqJTs4')  
+bot = Bot(token='')  
 dp = Dispatcher()
 
 @dp.message(Command('start'))
