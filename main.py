@@ -23,7 +23,7 @@ class StateShop(StatesGroup):
     custom_end_date = State()
 
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token='')  
+bot = Bot(token='7839698649:AAFCws771SSfuDCkZRlXCcEy_NJ2ecqJTs4')  
 dp = Dispatcher()
 
 @dp.message(Command('start'))
@@ -99,6 +99,7 @@ async def delete_shop(message: Message, state: FSMContext):
         data[user_id] = [shop for shop in data[user_id] if shop['name'] != shop_name]
         save_user_data(data)
         await message.answer(f"Магазин '{shop_name}' успешно удален.")
+        await state.clear()
     else:
         await message.answer(f"Магазин '{shop_name}' не найден.")
 
